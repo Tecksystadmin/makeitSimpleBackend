@@ -4,6 +4,7 @@ const userRoute = require('./user.route');
 const docsRoute = require('./docs.route');
 const settingsRoute = require('./settings.route');
 const bannerRoute = require('./banner.route');
+const aboutRoute = require('./about.route');
 const config = require('../../config/config');
 
 const router = express.Router();
@@ -24,6 +25,10 @@ const defaultRoutes = [
   {
     path: '/banner',
     route: bannerRoute,
+  },
+  {
+    path: '/about',
+    route: aboutRoute,
   },
 ];
 
