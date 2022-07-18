@@ -5,6 +5,7 @@ const catchAsync = require("../utils/catchAsync");
 const { settingsService } = require("../services");
 
 const updateSettings = catchAsync(async (req, res) => {
+  console.log(req.params)
   const setting = await settingsService.updateSettings(
     req.params.settingId,
     req.body

@@ -29,7 +29,8 @@ const updateSettings = async (settingId, updateBody) => {
     throw new ApiError(httpStatus.BAD_REQUEST, "Email already taken");
   }
   Object.assign(setting, updateBody);
-  await Settings.save();
+  console.log(setting);
+  await setting.save();
   return setting;
 };
 

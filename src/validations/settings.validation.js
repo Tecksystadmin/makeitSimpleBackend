@@ -1,18 +1,23 @@
-const Joi = require('joi');
-const { password, objectId } = require('./custom.validation');
+const Joi = require("joi");
+const { password, objectId } = require("./custom.validation");
 
 const updateSettings = {
-  body: Joi.object().keys({
-    companyName: Joi.string().required(),
-    companyNickName: Joi.string().required(),
-    companyTagLine: Joi.string().required(),
-    companyLink: Joi.string().required(),
-    companyEmail: Joi.string().required().email(),
-    favicon: Joi.string().allow('').allow(null),
-    companyLogo: Joi.string().allow('').allow(null),
-    socialMedia: Joi.array().allow(),
-    mobileNumber: Joi.array().allow(),
+  params: Joi.object().keys({
+    settingId: Joi.required().custom(objectId),
   }),
+  body: Joi.object()
+    .keys({
+      companyName: Joi.string(),
+      companyNickName: Joi.string(),
+      companyTagLine: Joi.string(),
+      companyLink: Joi.string(),
+      companyEmail: Joi.string().email(),
+      favicon: Joi.string().allow("").allow(null),
+      companyLogo: Joi.string().allow("").allow(null),
+      socialMedia: Joi.array().allow(),
+      mobileNumber: Joi.array().allow(),
+    })
+    .min(1),
 };
 
 const getSettings = {
