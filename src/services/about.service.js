@@ -22,7 +22,7 @@ const createAbout = async (AboutBody) => {
  * @returns {Promise<QueryResult>}
  */
 const queryAbouts = async (filter, options) => {
-  const abouts = await About.paginate(filter, options);
+  const abouts = await About.findOne();
   return abouts;
 };
 
@@ -35,7 +35,6 @@ const getAboutById = async (id) => {
   return About.findById(id);
 };
 
-
 /**
  * Update Banner by id
  * @param {ObjectId} AboutId
@@ -47,7 +46,7 @@ const updateAboutById = async (AboutId, updateBody) => {
   if (!about) {
     throw new ApiError(httpStatus.NOT_FOUND, "About not found");
   }
-  
+
   Object.assign(about, updateBody);
   await about.save();
   return about;

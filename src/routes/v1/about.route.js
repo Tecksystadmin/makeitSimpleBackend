@@ -12,7 +12,7 @@ router
   .get( validate(aboutValidation.getAbouts), aboutController.getAbouts);
 
 router
-  .route('/:userId')
+  .route('/:aboutId')
   .get( validate(aboutValidation.getAbout), aboutController.getAbout)
   .patch( validate(aboutValidation.updateAbout), aboutController.updateAbout)
   .delete( validate(aboutValidation.deleteAbout), aboutController.deleteAbout);
