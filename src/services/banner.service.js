@@ -22,7 +22,7 @@ const createBanner = async (BannerBody) => {
  * @returns {Promise<QueryResult>}
  */
 const queryBanners = async (filter, options) => {
-  const banners = await Banner.paginate(filter, options);
+  const banners = await Banner.findOne();
   return banners;
 };
 
@@ -36,22 +36,13 @@ const getBannerById = async (id) => {
 };
 
 /**
- * Get Banner by email
- * @param {string} email
- * @returns {Promise<Banner>}
- */
-const getBannerByEmail = async (email) => {
-  return Banner.findOne({ email });
-};
-
-/**
  * Update Banner by id
  * @param {ObjectId} BannerId
  * @param {Object} updateBody
  * @returns {Promise<Banner>}
  */
-const updateBannerById = async (BannerId, updateBody) => {
-  const banner = await getBannerById(BannerId);
+const updateBannerById = async (bannerId, updateBody) => {
+  const banner = await getBannerById(bannerId);
   if (!banner) {
     throw new ApiError(httpStatus.NOT_FOUND, "Banner not found");
   }
@@ -71,8 +62,8 @@ const updateBannerById = async (BannerId, updateBody) => {
  * @param {ObjectId} BannerId
  * @returns {Promise<Banner>}
  */
-const deleteBannerById = async (BannerId) => {
-  const banner = await getBannerById(BannerId);
+const deleteBannerById = async (bannerId) => {
+  const banner = await getBannerById(bannerId);
   if (!banner) {
     throw new ApiError(httpStatus.NOT_FOUND, "Banner not found");
   }
@@ -84,7 +75,6 @@ module.exports = {
   createBanner,
   queryBanners,
   getBannerById,
-  getBannerByEmail,
   updateBannerById,
   deleteBannerById,
 };

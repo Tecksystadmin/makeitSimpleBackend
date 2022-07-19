@@ -1,21 +1,24 @@
-const express = require('express');
-const auth = require('../../middlewares/auth');
-const validate = require('../../middlewares/validate');
-const bannerValidation = require('../../validations/banner.validation');
-const bannerController = require('../../controllers/banner.controller');
+const express = require("express");
+const auth = require("../../middlewares/auth");
+const validate = require("../../middlewares/validate");
+const bannerValidation = require("../../validations/banner.validation");
+const bannerController = require("../../controllers/banner.controller");
 
 const router = express.Router();
 
 router
-  .route('/')
-  .post( validate(bannerValidation.createBanner), bannerController.createBanner)
-  .get( validate(bannerValidation.getBanners), bannerController.getBanners);
+  .route("/")
+  .post(validate(bannerValidation.createBanner), bannerController.createBanner)
+  .get(validate(bannerValidation.getBanners), bannerController.getBanners);
 
 router
-  .route('/:userId')
-  .get( validate(bannerValidation.getBanner), bannerController.getBanner)
-  .patch( validate(bannerValidation.updateBanner), bannerController.updateBanner)
-  .delete( validate(bannerValidation.deleteBanner), bannerController.deleteBanner);
+  .route("/:bannerId")
+  .get(validate(bannerValidation.getBanner), bannerController.getBanner)
+  .patch(validate(bannerValidation.updateBanner), bannerController.updateBanner)
+  .delete(
+    validate(bannerValidation.deleteBanner),
+    bannerController.deleteBanner
+  );
 
 module.exports = router;
 
