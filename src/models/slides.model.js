@@ -3,24 +3,24 @@ const validator = require("validator");
 const bcrypt = require("bcryptjs");
 const { toJSON, paginate } = require("./plugins");
 
-const scheduleDemoSchema = mongoose.Schema(
+const slidesSchema = mongoose.Schema(
     {
-        fullName: {
+        heading: {
             type: String,
             required: true,
             trim: true,
         },
-        email: {
+        link: {
             type: String,
             required: true,
             trim: true,
         },
-        phone: {
+        topic: {
             type: String,
             required: true,
             trim: true,
         },
-        message: {
+        description: {
             type: String,
             required: true,
             unique: true,
@@ -32,6 +32,6 @@ const scheduleDemoSchema = mongoose.Schema(
     }
 );
 
-const ScheduleDemo = mongoose.model("ScheduleDemo", scheduleDemoSchema);
+const Slide = mongoose.model("Slide", slidesSchema);
 
-module.exports = ScheduleDemo;
+module.exports = Slide;

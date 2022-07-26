@@ -7,6 +7,7 @@ const bannerRoute = require('./banner.route');
 const aboutRoute = require('./about.route');
 const config = require('../../config/config');
 const scheduleDemoRoute=require('./scheduleDemo.route');
+const slidesRoute=require('./slides.route');
 
 const router = express.Router();
 
@@ -34,6 +35,10 @@ const defaultRoutes = [
   {
     path: '/scheduleDemo',
     route: scheduleDemoRoute,
+  },
+  {
+    path: '/slides',
+    route: slidesRoute,
   },
 ];
 

@@ -1,24 +1,24 @@
 const express = require("express");
 const auth = require("../../middlewares/auth");
 const validate = require("../../middlewares/validate");
-const scheduleDemoValidation = require("../../validations/scheduleDemo.validation");
-const scheduleDemoController = require("../../controllers/scheduleDemo.controller");
+const slidesValidation = require("../../validations/slides.validation");
+const slidesController = require("../../controllers/slides.controller");
 
 const router = express.Router();
 
 router
-  .route("/")
-  .post(validate(scheduleDemoValidation.createScheduleDemo), scheduleDemoController.createScheduleDemo)
-  .get(validate(scheduleDemoValidation.getScheduleDemos), scheduleDemoController.getScheduleDemos);
+    .route("/")
+    .post(validate(slidesValidation.createSlides), slidesController.createSlides)
+    .get(validate(slidesValidation.getSlides), slidesController.getSlides);
 
 router
-  .route("/:scheduleDemoId")
-  .get(validate(scheduleDemoValidation.getScheduleDemo), scheduleDemoController.getScheduleDemo)
-  .patch(validate(scheduleDemoValidation.updateScheduleDemo), scheduleDemoController.updateScheduleDemo)
-  .delete(
-    validate(scheduleDemoValidation.deleteScheduleDemo),
-    scheduleDemoController.deleteScheduleDemo
-  );
+    .route("/:slidesId")
+    .get(validate(slidesValidation.getSlide), slidesController.getSlide)
+    .patch(validate(slidesValidation.updateSlides), slidesController.updateSlides)
+    .delete(
+        validate(slidesValidation.deleteSlides),
+        slidesController.deleteSlides
+    );
 
 module.exports = router;
 

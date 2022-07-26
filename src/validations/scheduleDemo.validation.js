@@ -32,8 +32,10 @@ const updateScheduleDemo = {
   }),
   body: Joi.object()
     .keys({
-        bannerImage: Joi.string(),
-        bannerText: Joi.string()
+        fullName: Joi.string(),
+        email: Joi.string(),
+        phone: Joi.string(),
+        message: Joi.string()
     })
     .min(1),
 };

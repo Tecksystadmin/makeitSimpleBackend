@@ -6,3 +6,4 @@ module.exports.settingsService = require('./settings.service');
 module.exports.bannerService = require('./banner.service');
 module.exports.aboutService = require('./about.service');
 module.exports.scheduleDemoService = require('./scheduleDemo.service');
+module.exports.slidesService = require('./slides.service');
