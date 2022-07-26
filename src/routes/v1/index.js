@@ -6,6 +6,7 @@ const settingsRoute = require('./settings.route');
 const bannerRoute = require('./banner.route');
 const aboutRoute = require('./about.route');
 const config = require('../../config/config');
+const scheduleDemoRoute=require('./scheduleDemo.route');
 
 const router = express.Router();
 
@@ -29,6 +30,10 @@ const defaultRoutes = [
   {
     path: '/about',
     route: aboutRoute,
+  },
+  {
+    path: '/scheduleDemo',
+    route: scheduleDemoRoute,
   },
 ];
 
