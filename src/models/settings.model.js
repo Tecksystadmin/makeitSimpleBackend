@@ -67,14 +67,14 @@ async function inIt() {
   // console.log('CATEGORY success===', success)
   if (success == 0) {
     await new Setting({
-      mobileNumber: ["8303999849", "9648377181", "9580038997"],
+      mobileNumber: ["+918957848236"],
       companyNickName: "MKT",
-      companyName: "Make It Simple",
-      companyLocation: "In front of Gautam Cinema, Katghar, Prayagraj - 211003",
+      companyName: "MAKE IT SIMPLE",
+      companyLocation: "OPS Nagar,Kalindipuram, Prayagraj,Uttar Pradesh, 211011",
       companyTagLine: "Turn your Dream into Reality",
-      companyLink: "www.makeitsimple.com",
-      companyAddress: "1039 A Dariyabad Prayagraj",
-      companyEmail: "admin@tecksyst.com",
+      companyLink: "https://makeitsimple.net.in/",
+      companyAddress: "OPS Nagar,Kalindipuram, Prayagraj,Uttar Pradesh, 211011",
+      companyEmail: "support@makeitsimple.net.in",
       socialMedia: [
         {
           platform: "instagram",

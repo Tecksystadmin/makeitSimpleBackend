@@ -15,7 +15,7 @@ const slidesSchema = mongoose.Schema(
             required: true,
             trim: true,
         },
-        topic: {
+        shortDescription: {
             type: String,
             required: true,
             trim: true,
@@ -26,6 +26,13 @@ const slidesSchema = mongoose.Schema(
             unique: true,
             trim: true,
         },
+        cards: [
+            {
+                title: { type: String },
+                image: { type: String },
+                link: { type: String },
+            }
+        ]
     },
     {
         timestamps: true,

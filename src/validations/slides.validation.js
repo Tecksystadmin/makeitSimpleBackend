@@ -4,10 +4,15 @@ const { password, objectId } = require('./custom.validation');
 const createSlides = {
   body: Joi.object().keys({
     heading: Joi.string().required(),
-    link: Joi.string().required(),
-    topic: Joi.string().required(),
+    link: Joi.string().allow().allow(null),
     description: Joi.string().required(),
-}),
+    shortDescription: Joi.string().allow().allow(null),
+    cards: Joi.array().items(Joi.object({
+      title: Joi.string().required(),
+      image: Joi.string().required(),
+      link: Joi.string().allow().allow(null),
+    }))
+  }),
 };
 
 const getSlides = {
@@ -32,10 +37,10 @@ const updateSlides = {
   }),
   body: Joi.object()
     .keys({
-        heading: Joi.string(),
-        link: Joi.string(),
-        topic: Joi.string(),
-        description: Joi.string()
+      heading: Joi.string(),
+      link: Joi.string(),
+      topic: Joi.string(),
+      description: Joi.string()
     })
     .min(1),
 };
