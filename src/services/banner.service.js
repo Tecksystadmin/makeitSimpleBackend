@@ -22,7 +22,7 @@ const createBanner = async (BannerBody) => {
  * @returns {Promise<QueryResult>}
  */
 const queryBanners = async (filter, options) => {
-  const banners = await Banner.findOne();
+  const banners = await Banner.find();
   return banners;
 };
 
