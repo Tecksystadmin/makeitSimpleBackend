@@ -22,7 +22,7 @@ const createAbout = async (AboutBody) => {
  * @returns {Promise<QueryResult>}
  */
 const queryAbouts = async (filter, options) => {
-  const abouts = await About.findOne();
+  const abouts = await About.find();
   return abouts;
 };
 

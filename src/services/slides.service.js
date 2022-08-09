@@ -22,7 +22,7 @@ const createSlides = async (SlidesBody) => {
  * @returns {Promise<QueryResult>}
  */
 const querySlides = async (filter, options) => {
-  const slides = await Slides.findOne();
+  const slides = await Slides.find();
   return slides;
 };
 
