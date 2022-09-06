@@ -8,6 +8,7 @@ const aboutRoute = require('./about.route');
 const config = require('../../config/config');
 const scheduleDemoRoute=require('./scheduleDemo.route');
 const slidesRoute=require('./slides.route');
+const contactRoute=require('./contact.route');
 
 const router = express.Router();
 
@@ -40,6 +41,10 @@ const defaultRoutes = [
     path: '/slides',
     route: slidesRoute,
   },
+  {
+    path: '/contact',
+    route: contactRoute,
+  }
 ];
 
 const devRoutes = [
