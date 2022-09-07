@@ -3,10 +3,11 @@ const {objectId } = require('./custom.validation');
 
 const createContact = {
   body: Joi.object().keys({
-    emailAddress: Joi.string().required().email(),
-    fullName: Joi.string().required(),
-    message: Joi.string().required(),
-    mobileNo: Joi.number().required(),
+    name: Joi.string().required(),
+    email: Joi.string().required().email(),
+    mobile: Joi.number().required(),
+    requirement: Joi.string().allow('').allow(null),
+    message: Joi.string().allow('').allow(null),
   }),
 };
 

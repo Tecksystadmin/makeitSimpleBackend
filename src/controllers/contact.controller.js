@@ -5,6 +5,7 @@ const catchAsync = require('../utils/catchAsync');
 const { contactService } = require('../services');
 
 const createContact = catchAsync(async (req, res) => {
+  console.log("🚀 ~ file: contact.controller.js ~ line 8 ~ createContact ~ req", req.body̵̵)
   const contact = await contactService.createContact(req.body);
   res.status(httpStatus.CREATED).send(contact);
 });

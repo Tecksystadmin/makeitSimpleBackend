@@ -9,7 +9,7 @@ const ApiError = require('../utils/ApiError');
  */
 const createContact = async (contactBody) => {
   const contact = await Contact.create(contactBody);
-  return contact;
+  return { data: contact, code: 200, message: "Contact Submitted Successfully!" };
 };
 
 /**

@@ -4,15 +4,14 @@ const { toJSON, paginate } = require('./plugins');
 
 const contactSchema = mongoose.Schema(
   {
-    fullName: {
+    name: {
       type: String,
       required: true,
       trim: true,
     },
-    emailAddress: {
+    email: {
       type: String,
       required: true,
-      unique: true,
       trim: true,
       lowercase: true,
       validate(value) {
@@ -21,14 +20,17 @@ const contactSchema = mongoose.Schema(
         }
       },
     },
-    message: {
-      type: String,
+    mobile: {
+      type: Number,
       required: true,
       trim: true,
     },
-    mobileNo: {
-      type: Number,
-      required: true,
+    message: {
+      type: String,
+      trim: true,
+    },
+    requirement: {
+      type: String,
       trim: true,
     },
   },
