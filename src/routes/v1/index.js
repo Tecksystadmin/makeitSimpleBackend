@@ -9,6 +9,7 @@ const config = require('../../config/config');
 const scheduleDemoRoute=require('./scheduleDemo.route');
 const slidesRoute=require('./slides.route');
 const contactRoute=require('./contact.route');
+const portfolioRoute=require('./portfolio.route');
 
 const router = express.Router();
 
@@ -44,6 +45,10 @@ const defaultRoutes = [
   {
     path: '/contact',
     route: contactRoute,
+  },
+  {
+    path: '/portfolio',
+    route: portfolioRoute,
   }
 ];
 

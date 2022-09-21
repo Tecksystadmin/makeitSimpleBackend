@@ -6,3 +6,4 @@ module.exports.About = require('./about.model');
 module.exports.ScheduleDemo = require('./scheduleDemo.model');
 module.exports.Slides = require('./slides.model');
 module.exports.Contact = require('./contact.model');
+module.exports.Portfolio = require('./portfolio.model');

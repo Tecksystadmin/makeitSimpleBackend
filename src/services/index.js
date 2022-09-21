@@ -8,3 +8,4 @@ module.exports.aboutService = require('./about.service');
 module.exports.scheduleDemoService = require('./scheduleDemo.service');
 module.exports.slidesService = require('./slides.service');
 module.exports.contactService = require('./contact.service');
+module.exports.portfolioService = require('./portfolio.service');
