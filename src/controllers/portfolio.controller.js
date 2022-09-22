@@ -11,7 +11,8 @@ const createPortfolio = catchAsync(async (req, res) => {
 });
 
 const getPortfolios = catchAsync(async (req, res) => {
-  const filter = pick(req.query, ['name', 'role']);
+  const filter = pick(req.query, ['category']);
+  console.log("🚀 ~ file: portfolio.controller.js ~ line 15 ~ getPortfolios ~ filter", filter)
   const options = pick(req.query, ['sortBy', 'limit', 'page']);
   const result = await portfolioService.queryPortfolios(filter, options);
   res.send(result);

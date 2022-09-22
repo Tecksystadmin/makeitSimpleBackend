@@ -15,8 +15,7 @@ const createPortfolio = {
 
 const getPortfolios = {
   query: Joi.object().keys({
-    fullName: Joi.string(),
-    emailAddress: Joi.string(),
+    category: Joi.string().allow('').allow(null),
     sortBy: Joi.string(),
     limit: Joi.number().integer(),
     page: Joi.number().integer(),
