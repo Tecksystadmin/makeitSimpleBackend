@@ -9,7 +9,6 @@ const router = express.Router();
 router
   .route('/')
   .post(validate(contactValidation.createContact), contactController.createContact)
-  .get(auth('getContacts'), validate(contactValidation.getContacts), contactController.getContacts);
-
+  .get(validate(contactValidation.getContacts), contactController.getContacts);
 
 module.exports = router;
