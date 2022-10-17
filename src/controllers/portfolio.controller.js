@@ -5,14 +5,12 @@ const catchAsync = require('../utils/catchAsync');
 const { portfolioService } = require('../services');
 
 const createPortfolio = catchAsync(async (req, res) => {
-  console.log("🚀 ~ file: portfolio.controller.js ~ line 8 ~ createPortfolio ~ req", req.body̵̵)
   const portfolio = await portfolioService.createPortfolio(req.body);
   res.status(httpStatus.CREATED).send(portfolio);
 });
 
 const getPortfolios = catchAsync(async (req, res) => {
   const filter = pick(req.query, ['category']);
-  console.log("🚀 ~ file: portfolio.controller.js ~ line 15 ~ getPortfolios ~ filter", filter)
   const options = pick(req.query, ['sortBy', 'limit', 'page']);
   const result = await portfolioService.queryPortfolios(filter, options);
   res.send(result);
